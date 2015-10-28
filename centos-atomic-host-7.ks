@@ -5,8 +5,7 @@ timezone --utc Etc/UTC
 
 auth --useshadow --enablemd5
 selinux --enforcing
-rootpw --lock --iscrypted locked
-user --name=none
+rootpw --plaintext Welcome2KolabSystems
 
 firewall --disabled
 
@@ -36,12 +35,6 @@ reboot
 # we need to install the repo here.
 ostree remote delete centos-atomic-host
 ostree remote add --set=gpg-verify=false centos-atomic-host 'http://buildlogs.centos.org/centos/7/atomic/x86_64/repo'
-
-# older versions of livecd-tools do not follow "rootpw --lock" line above
-# https://bugzilla.redhat.com/show_bug.cgi?id=964299
-passwd -l root
-# remove the user anaconda forces us to make
-userdel -r none
 
 # If you want to remove rsyslog and just use journald, remove this!
 echo -n "Disabling persistent journal"
