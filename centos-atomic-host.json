@@ -5,11 +5,30 @@
 
     "initramfs-args": ["--no-hostonly"],
 
-    "packages": ["tuned", "man-db", "man-pages", "bash-completion",
-                 "rsync", "tmux", "net-tools", "nmap-ncat", "bind-utils", "git",
-                 "sysstat", "policycoreutils-python", "setools-console", "docker",
-                 "audit", "cloud-init", "cloud-utils-growpart",
-                 "cockpit", "kubernetes", "etcd", "cadvisor"],
+    "packages": [
+            "audit",
+            "bash-completion",
+            "bind-utils",
+            "cadvisor",
+            "cloud-init",
+            "cloud-utils-growpart",
+            "cockpit",
+            "docker",
+            "etcd",
+            "git",
+            "kubernetes",
+            "man-db",
+            "man-pages",
+            "net-tools",
+            "nmap-ncat",
+            "policycoreutils-python",
+            "rsync",
+            "setools-console",
+            "sysstat",
+            "tmux",
+            "tuned",
+            "yum"
+        ],
 
     "units": ["docker.service", "cockpit.socket"],
     "default_target": "multi-user.target"
